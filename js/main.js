@@ -2,9 +2,11 @@
 
 var logo = document.querySelector('.main__logo-container');
 
-setTimeout(function() {
-  logo.classList.add('after');
-}, 1500);
+window.addEventListener("load", function(event) {
+    logo.classList.add('main__logo-container__after');
+});
+
+
 
 // -------------- text 01 ----------------- //
 // set variables

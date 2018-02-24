@@ -23,7 +23,16 @@
   top: 8%;
   left: 40%;
   width: 100%;
-  margin: auto;
+}
+
+.main__logo-container__after {
+  transform: scale(0.8);
+  top: 0.5%;
+  left: -5%;
+  transition-property: transform top left ;
+  transition-duration: 500ms;
+  transition-delay: 1s;
+  transition-timing-function: linear;
 }
 
 .main__logo-container__img {
@@ -40,11 +49,6 @@
 
 .main__media-container__video {
   width: 100%;
-}
-
-.after {
-  transform: scale(0.8) translate(-57%, -98%);
-  transition: transform 1s;
 }
 
 .main__text-container {
