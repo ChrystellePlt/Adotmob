@@ -12,6 +12,10 @@
   position: relative
 }
 
+body {
+  font-size: 64.5%;
+}
+
 .main {
   background: #0496D6;
   width: 100%;
@@ -45,60 +49,88 @@ to {transform: scale(0.8)}
 
 .main__logo-container__move {
   -webkit-animation: logo-move 1.2s 1; /* Safari 4.0 - 8.0 */
-  animation: logo-move 1.5s 1;
+  animation: logo-move 1.2s 1;
   animation-fill-mode: forwards;
   animation-delay: 2s;
+  animation-timing-function: linear;
 }
 
 .main__first-paragraph-container {
   color: #fff;
-  font-size: 2rem;
+  font-size: 4rem;
   padding-top: 40%;
 }
 
 .main__first-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 50px;
+  line-height: 6rem;
   text-align: center;
   font-family: 'helvetica-neue';
   right: -120%;
 }
 
 .main__first-paragraph-container__content-move {
-  -webkit-animation: text-move 1.2s 1; /* Safari 4.0 - 8.0 */
-  animation: text-move 1.2s 1;
+  -webkit-animation: first-paragraph-move 1s 1; /* Safari 4.0 - 8.0 */
+  animation: first-paragraph-move 1s 1;
   animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes text-move {
+@-webkit-keyframes first-paragraph-move {
 from {right: -120%;}
 to {right: -2%;}
 }
 
-@keyframes text-move {
+@keyframes first-paragraph-move {
 from {right: -120%;}
 to {right: -2%;}
 }
 
 .hidden {
   opacity: 0;
-  transition: opacity .75s ease-in-out;
-  -moz-transition: opacity .75s ease-in-out;
-  -webkit-transition: opacity .75s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition-delay: .5s; 
 }
 
 .display-none {
   display: 'none';
 }
 
-.main__text-container02 {
+.main__second-paragraph-container {
   display: none;
   color: #fff;
-  font-size: 3rem;
-  padding-top: 20%;
+  font-size: 5rem;
+  padding-top: 5%;
 }
 
+.main__second-paragraph-container__content {
+  text-transform: uppercase;
+  line-height: 7rem;
+  text-align: center;
+  font-family: 'helvetica-neue';
+  right: -120%;
+}
+
+.main__second-paragraph-container__content-move {
+  -webkit-animation: second-paragraph-move 1s 1; /* Safari 4.0 - 8.0 */
+  animation: second-paragraph-move 1s 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes second-paragraph-move {
+from {right: -120%;}
+to {right: -2%;}
+}
+
+@keyframes second-paragraph-move {
+from {right: -120%;}
+to {right: -2%;}
+}
 
 .main__logo-container__img {
   width: 20%;
