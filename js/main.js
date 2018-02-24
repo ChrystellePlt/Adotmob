@@ -37,6 +37,7 @@ logo.addEventListener('animationstart', function() {
 var secondParagraphContent = document.querySelectorAll('.main__second-paragraph-container__content');
 var secondParagraphContainer = document.querySelector('.main__second-paragraph-container');
 var secondParagraphLastChild = document.querySelector('.main__second-paragraph-container p:last-child');
+var fixedParagraphContainer = document.querySelector('.main__fixed-paragraph-container');
 
 firstParagraphLastChild.addEventListener('transitionend', function() {
   firstParagraphContainer.style.display = 'none';
@@ -49,6 +50,7 @@ firstParagraphLastChild.addEventListener('transitionend', function() {
     secondParagraphSentence.classList.add('main__second-paragraph-container__content-move');
     i++;
   })
+  fixedParagraphContainer.classList.add('main__fixed-paragraph-container-visible');
 })
 
 secondParagraphLastChild.addEventListener('animationend', function() {
@@ -59,4 +61,41 @@ secondParagraphLastChild.addEventListener('animationend', function() {
 
 secondParagraphLastChild.addEventListener('transitionend', function() {
   secondParagraphContainer.style.display = 'none';
+})
+
+var thirdParagraphContent = document.querySelectorAll('.main__third-paragraph-container__content');
+var thirdParagraphContainer = document.querySelector('.main__third-paragraph-container');
+var thirdParagraphLastChild = document.querySelector('.main__third-paragraph-container p:last-child');
+
+secondParagraphLastChild.addEventListener('transitionend', function() {
+  secondParagraphContainer.style.display = 'none';
+  thirdParagraphContainer.style.display = 'block';
+  i = 0;
+  thirdParagraphContent.forEach(function(thirdParagraphSentence) {
+    delay = 0.3;
+    delayDuration = delay * i;
+    thirdParagraphSentence.style.animationDelay = delayDuration + 's';
+    thirdParagraphSentence.classList.add('main__third-paragraph-container__content-move');
+    i++;
+  })
+})
+
+thirdParagraphLastChild.addEventListener('animationend', function() {
+  thirdParagraphContent.forEach(function(thirdParagraphSentence){
+    thirdParagraphSentence.classList.add('hidden');
+    fixedParagraphContainer.classList.remove('main__fixed-paragraph-container-visible');
+    fixedParagraphContainer.style.transitionDelay = '1s';
+  })
+})
+
+var lastParagraphContent = document.querySelectorAll('.main__last-paragraph-container__content');
+var lastParagraphContainer = document.querySelector('.main__last-paragraph-container');
+var lastParagraphLastChild = document.querySelector('.main__last-paragraph-container p:last-child');
+
+thirdParagraphLastChild.addEventListener('transitionend', function() {
+  thirdParagraphContainer.style.display = 'none';
+  lastParagraphContainer.style.display = 'block';
+  lastParagraphContent.forEach(function(lastParagraphSentence){
+    lastParagraphSentence.classList.add('show');
+  })
 })
