@@ -90,6 +90,7 @@ var lastParagraphContent = document.querySelectorAll('.main__last-paragraph-cont
 var lastParagraphContainer = document.querySelector('.main__last-paragraph-container');
 var lastParagraphLastChild = document.querySelector('.main__last-paragraph-container p:last-child');
 var lastParagraphButton = document.querySelector('.main__last-paragraph-container__button');
+var map = document.querySelector('.main__media-container__map-container');
 
 thirdParagraphLastChild.addEventListener('transitionend', function() {
   thirdParagraphContainer.style.display = 'none';
@@ -109,3 +110,7 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
   lastParagraphButton.style.animationDelay = '0.3s';
   lastParagraphButton.classList.add('main__last-paragraph-container__content-opacity');
 });
+
+lastParagraphButton.addEventListener('animationstart', function() {
+  map.classList.add('main__media-container__map-container__move');
+})
