@@ -73,7 +73,7 @@ secondParagraphLastChild.addEventListener('transitionend', function() {
   })
 })
 
-/*thirdParagraphLastChild.addEventListener('animationend', function() {
+thirdParagraphLastChild.addEventListener('animationend', function() {
   thirdParagraphContent.forEach(function(thirdParagraphSentence){
     thirdParagraphSentence.classList.add('hidden');
     fixedParagraphContainer.classList.remove('main__fixed-paragraph-container-visible');
@@ -108,4 +108,13 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
 
 lastParagraphButton.addEventListener('animationstart', function() {
   map.classList.add('main__media-container__map-container__move');
-})*/
+});
+
+function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(48.861215, 2.3444974),
+        zoom: 20,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+var map = new google.maps.Map(document.querySelector(".main__media-container__map-container"), mapOptions);
+}
