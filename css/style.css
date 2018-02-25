@@ -13,8 +13,8 @@
   text-decoration: none;
 }
 
-body {
-  font-size: 64.5%;
+html {
+  font-size: 62.5%;
 }
 
 .main {
@@ -63,21 +63,21 @@ to {transform: scale(0.8)}
 
 .main__first-paragraph-container {
   color: #fff;
-  font-size: 4rem;
+  font-size: 6rem;
   padding-top: 30%;
 }
 
 .main__first-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 6rem;
+  line-height: 7rem;
   text-align: center;
   font-family: 'helvetica-neue';
   right: -120%;
 }
 
 .main__first-paragraph-container__content-move {
-  -webkit-animation: first-paragraph-move 1s 1; /* Safari 4.0 - 8.0 */
-  animation: first-paragraph-move 1s 1;
+  -webkit-animation: first-paragraph-move 0.6s 1;
+  animation: first-paragraph-move 0.6s 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -107,21 +107,36 @@ to {right: -2%;}
 .main__second-paragraph-container {
   display: none;
   color: #fff;
-  font-size: 5rem;
-  padding-top: 5%;
 }
 
 .main__second-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 7rem;
   text-align: center;
   font-family: 'helvetica-neue';
   right: -120%;
 }
 
+.main__second-paragraph-container__content__1st-and-2nd-child-style {
+  font-size: 8rem;
+  line-height: 9rem;
+  letter-spacing: 1.2rem;
+}
+
+.main__second-paragraph-container__content__3rd-child-style {
+  padding-top: 10%;
+  line-height: 7rem;
+  font-size: 6rem;
+  letter-spacing: 1rem;
+}
+
+.main__second-paragraph-container__content__last-child-style {
+  padding-top: 7%;
+  font-size: 20rem;
+}
+
 .main__second-paragraph-container__content-move {
-  -webkit-animation: second-paragraph-move 1s 1; /* Safari 4.0 - 8.0 */
-  animation: second-paragraph-move 1s 1;
+  -webkit-animation: second-paragraph-move 0.6s 1; /* Safari 4.0 - 8.0 */
+  animation: second-paragraph-move 0.6s 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -156,15 +171,16 @@ to {right: -2%;}
 .main__fixed-paragraph-container {
   position: absolute;
   top: 85%;
-  padding: 0 5%;
+  padding: 0 4%;
   margin: auto;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.3rem;
+  line-height: 3rem;
   color: #fff;
   opacity: 0;
   transition-delay: 1.5s;
   transition: opacity 1s ease-in-out;
   font-family: 'helvetica-neue';
-  font-weight: 300;
 }
 
 .main__fixed-paragraph-container-visible {
@@ -176,19 +192,52 @@ to {right: -2%;}
   color: #fff;
   font-size: 5rem;
   padding-top: 5%;
+  width: 80%;
+  margin: auto;
 }
 
 .main__third-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 7rem;
-  text-align: center;
+  text-align: right;
   font-family: 'helvetica-neue';
   right: -120%;
+  font-weight: bold;
+}
+
+.main__third-paragraph-container__content__1st-child-style {
+  font-size: 7.9rem;
+  letter-spacing: 1rem;
+}
+
+.main__third-paragraph-container__content__2nd-child-style {
+  padding-top: 6%;
+  font-size: 16.1rem;
+  letter-spacing: 1.6rem;
+  line-height: 15rem;
+}
+
+.main__third-paragraph-container__content__3rd-child-style {
+  padding-top: 1%;
+  font-size: 7.5rem;
+  letter-spacing: 1rem;
+}
+
+.main__third-paragraph-container__content__4th-child-style {
+  padding-top: 4%;
+  font-size: 10.5rem;
+  letter-spacing: 1.5rem;
+}
+
+.stars {
+  font-size: 6rem;
+  font-family: 'helvetica-neue';
+  font-weight: bold;
+  vertical-align: top;
 }
 
 .main__third-paragraph-container__content-move {
-  -webkit-animation: third-paragraph-move 1s 1; /* Safari 4.0 - 8.0 */
-  animation: third-paragraph-move 1s 1;
+  -webkit-animation: third-paragraph-move 0.6s 1; /* Safari 4.0 - 8.0 */
+  animation: third-paragraph-move 0.6s 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -239,8 +288,14 @@ to {opacity: 1;}
 .main__last-paragraph-container__button {
   opacity: 0;
   border: 2px solid #fff;
-  width: 50%;
+  width: 55%;
   margin: auto;
+}
+
+.main__last-paragraph-container__button_link {
+  display: flex;
+  width: 100%;
+  padding: 5% 2%;
 }
 
 .main__last-paragraph-container__button__link__text {
@@ -249,6 +304,16 @@ to {opacity: 1;}
   font-family: 'helvetica-neue';
   color: #fff;
   font-size: 2.5rem;
+  margin: auto;
+}
+
+.main__last-paragraph-container__button__link__icon-container {
+  width: 20%;
+  text-align: center;
+}
+
+.main__last-paragraph-container__button__link__icon-container-img {
+  width: 32%;
 }
 
 .main__media-container__map-container__img {

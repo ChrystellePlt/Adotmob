@@ -5,11 +5,12 @@ var firstParagraphLastChild = document.querySelector('.main__first-paragraph-con
 var delay;
 var delayDuration;
 var i = 0;
+var html = document.querySelector('html');
 
 window.addEventListener("load", function(event) {
     logo.classList.add('main__logo-container__move');
     firstParagraphContent.forEach(function(firstParagraphSentence) {
-      delay = 0.3;
+      delay = 0.2;
       delayDuration = delay * i;
       firstParagraphSentence.style.animationDelay = delayDuration + 's';
       firstParagraphSentence.classList.add('main__first-paragraph-container__content-move');
@@ -23,12 +24,6 @@ logo.addEventListener('animationstart', function() {
     firstParagraphSentence.addEventListener('transitionend', function() {
       firstParagraphContainer.style.display = 'none';
     })
-  })
-})
-
-logo.addEventListener('animationstart', function() {
-  firstParagraphContent.forEach(function(firstParagraphSentence){
-    firstParagraphSentence.classList.add('hidden');
   })
 })
 
@@ -78,7 +73,7 @@ secondParagraphLastChild.addEventListener('transitionend', function() {
   })
 })
 
-thirdParagraphLastChild.addEventListener('animationend', function() {
+/*thirdParagraphLastChild.addEventListener('animationend', function() {
   thirdParagraphContent.forEach(function(thirdParagraphSentence){
     thirdParagraphSentence.classList.add('hidden');
     fixedParagraphContainer.classList.remove('main__fixed-paragraph-container-visible');
@@ -113,4 +108,4 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
 
 lastParagraphButton.addEventListener('animationstart', function() {
   map.classList.add('main__media-container__map-container__move');
-})
+})*/
