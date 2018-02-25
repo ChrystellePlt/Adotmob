@@ -1,5 +1,3 @@
-// -------------- logo animation ----------------- //
-
 var logo = document.querySelector('.main__logo-container');
 var firstParagraphContent = document.querySelectorAll('.main__first-paragraph-container__content');
 var firstParagraphContainer = document.querySelector('.main__first-paragraph-container');
@@ -91,11 +89,23 @@ thirdParagraphLastChild.addEventListener('animationend', function() {
 var lastParagraphContent = document.querySelectorAll('.main__last-paragraph-container__content');
 var lastParagraphContainer = document.querySelector('.main__last-paragraph-container');
 var lastParagraphLastChild = document.querySelector('.main__last-paragraph-container p:last-child');
+var lastParagraphButton = document.querySelector('.main__last-paragraph-container__button');
 
 thirdParagraphLastChild.addEventListener('transitionend', function() {
   thirdParagraphContainer.style.display = 'none';
   lastParagraphContainer.style.display = 'block';
+  lastParagraphButton.style.display = 'block';
+  i = 0;
   lastParagraphContent.forEach(function(lastParagraphSentence){
-    lastParagraphSentence.classList.add('show');
+    delay = 0.3;
+    delayDuration = delay * i;
+    lastParagraphSentence.style.animationDelay = delayDuration + 's';
+    lastParagraphSentence.classList.add('main__last-paragraph-container__content-opacity');
+    i++;
   })
 })
+
+lastParagraphLastChild.addEventListener('animationstart', function() {
+  lastParagraphButton.style.animationDelay = '0.3s';
+  lastParagraphButton.classList.add('main__last-paragraph-container__content-opacity');
+});

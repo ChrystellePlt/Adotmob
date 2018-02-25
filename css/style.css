@@ -9,7 +9,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  position: relative
+  position: relative;
+  text-decoration: none;
 }
 
 body {
@@ -17,10 +18,15 @@ body {
 }
 
 .main {
-  background: #0496D6;
+  background: #4FACDB;
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
+}
+
+.main__text-container {
+  width: 100%;
+  height: 53vh;
 }
 
 .main__logo-container {
@@ -48,8 +54,8 @@ to {transform: scale(0.8)}
   }
 
 .main__logo-container__move {
-  -webkit-animation: logo-move 1.2s 1; /* Safari 4.0 - 8.0 */
-  animation: logo-move 1.2s 1;
+  -webkit-animation: logo-move 0.5s 1; /* Safari 4.0 - 8.0 */
+  animation: logo-move 0.5s 1;
   animation-fill-mode: forwards;
   animation-delay: 2s;
   animation-timing-function: linear;
@@ -92,7 +98,6 @@ to {right: -2%;}
   transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out;
-  transition-delay: 1s;
 }
 
 .display-none {
@@ -138,19 +143,20 @@ to {right: -2%;}
 }
 
 .main__media-container {
-  width: 100%;
-  position: absolute;
   bottom: 0;
-  max-height: 47vh;
+  height: 47vh;
 }
 
 .main__media-container__video {
-  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 .main__fixed-paragraph-container {
   position: absolute;
-  top: 50%;
+  top: 90%;
   padding: 0 5%;
   margin: auto;
   font-size: 1.5rem;
@@ -158,6 +164,8 @@ to {right: -2%;}
   opacity: 0;
   transition-delay: 1.5s;
   transition: opacity 1s ease-in-out;
+  font-family: 'helvetica-neue';
+  font-weight: 300;
 }
 
 .main__fixed-paragraph-container-visible {
@@ -212,10 +220,34 @@ to {right: -2%;}
   opacity: 0;
 }
 
-.show {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition-delay: 1s;
+.main__last-paragraph-container__content-opacity {
+  -webkit-animation: last-paragraph-opacity 1s 1;
+  animation: last-paragraph-opacity 1s 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes last-paragraph-opacity {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@keyframes last-paragraph-opacity {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+.main__last-paragraph-container__button {
+  opacity: 0;
+  border: 2px solid #fff;
+  width: 50%;
+  margin: auto;
+}
+
+.main__last-paragraph-container__button__link__text {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'helvetica-neue';
+  color: #fff;
+  font-size: 2.5rem;
 }
