@@ -113,8 +113,8 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
 
 function myMap() {
     var mapProperties = {
-        center: new google.maps.LatLng(48.861215, 2.3444974),
-        zoom: 18,
+        center: new google.maps.LatLng(48.7162227, 2.244765),
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 var map = new google.maps.Map(document.querySelector(".main__media-container__map-container"), mapProperties);

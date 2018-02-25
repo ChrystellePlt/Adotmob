@@ -15,7 +15,7 @@
 
 html {
   font-size: 62.5%;
-  
+
 
 }
 
@@ -66,9 +66,9 @@ to {transform: scale(0.8)}
 
 .main__paragraphs-container__first-paragraph-container {
   color: #fff;
-  font-size: 7.5rem;
+  font-size: 2.3rem;
   padding-top: 30%;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
   font-family: 'helvetica-neue';
   font-weight: bold;
 
@@ -76,7 +76,7 @@ to {transform: scale(0.8)}
 
 .main__paragraphs-container__first-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 8.8rem;
+  line-height: 2.8rem;
   text-align: center;
   right: -120%;
 }
@@ -122,21 +122,21 @@ to {right: -2%;}
 }
 
 .main__paragraphs-container__second-paragraph-container__content__1st-and-2nd-child-style {
-  font-size: 8rem;
-  line-height: 9rem;
-  letter-spacing: 1.2rem;
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.35rem;
 }
 
 .main__paragraphs-container__second-paragraph-container__content__3rd-child-style {
   padding-top: 10%;
-  line-height: 7rem;
-  font-size: 6rem;
-  letter-spacing: 1rem;
+  line-height: 2.2rem;
+  font-size: 1.9rem;
+  letter-spacing: 0.3rem;
 }
 
 .main__paragraphs-container__second-paragraph-container__content__last-child-style {
   padding-top: 7%;
-  font-size: 20rem;
+  font-size: 6.3rem;
 }
 
 .main__paragraphs-container__logo-container__img {
@@ -160,9 +160,9 @@ to {right: -2%;}
   top: 85%;
   padding: 0 4%;
   margin: auto;
-  font-size: 2.4rem;
-  letter-spacing: 0.3rem;
-  line-height: 3rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.2rem;
   color: #fff;
   opacity: 0;
   transition-delay: 1.5s;
@@ -181,7 +181,7 @@ to {right: -2%;}
 .main__paragraphs-container__third-paragraph-container {
   display: none;
   color: #fff;
-  font-size: 5rem;
+  font-size: 1.58rem;
   padding-top: 5%;
   width: 80%;
   margin: auto;
@@ -196,31 +196,31 @@ to {right: -2%;}
 }
 
 .main__paragraphs-container__third-paragraph-container__content__1st-child-style {
-  font-size: 7.9rem;
-  letter-spacing: 1rem;
+  font-size: 3.1rem;
+  letter-spacing: 0.3rem;
 }
 
 .main__paragraphs-container__third-paragraph-container__content__2nd-child-style {
   padding-top: 6%;
-  font-size: 16.1rem;
-  letter-spacing: 1.6rem;
-  line-height: 15rem;
+  font-size: 6.15rem;
+  letter-spacing: 0.51rem;
+  line-height: 4.73rem;
 }
 
 .main__paragraphs-container__third-paragraph-container__content__3rd-child-style {
   padding-top: 1%;
-  font-size: 7.5rem;
-  letter-spacing: 1rem;
+  font-size: 2.9rem;
+  letter-spacing: 0.3rem;
 }
 
 .main__paragraphs-container__third-paragraph-container__content__4th-child-style {
   padding-top: 4%;
-  font-size: 10.5rem;
-  letter-spacing: 1.5rem;
+  font-size: 4.5rem;
+  letter-spacing: 0.45rem;
 }
 
 .main__paragraphs-container__third-paragraph-container__content__4th-child-style__span-stars {
-  font-size: 6rem;
+  font-size: 1.9rem;
   font-family: 'helvetica-neue';
   font-weight: bold;
   vertical-align: top;
@@ -234,8 +234,8 @@ to {right: -2%;}
 
 .main__paragraphs-container__last-paragraph-container__content {
   text-transform: uppercase;
-  line-height: 7rem;
-  font-size: 6rem;
+  line-height: 2.2rem;
+  font-size: 1.9rem;
   text-align: center;
   font-family: 'helvetica-neue';
   font-weight: bold;
@@ -261,7 +261,7 @@ to {opacity: 1;}
 
 .main__paragraphs-container__last-paragraph-container__button {
   opacity: 0;
-  border: 2px solid #fff;
+  border: 0.15rem solid #fff;
   width: 55%;
   margin: auto;
 }
@@ -269,25 +269,29 @@ to {opacity: 1;}
 .main__paragraphs-container__last-paragraph-container__button__link {
   display: flex;
   width: 100%;
-  padding: 5% 2%;
+  padding: 3% 2% 1% 2%;
 }
 
 .main__paragraphs-container__last-paragraph-container__button__link__text {
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   font-family: 'helvetica-neue';
   color: #fff;
-  font-size: 4rem;
+  font-size: 1.2rem;
   margin: auto;
+  padding-left: 1%;
+  vertical-align: bottom;
+  letter-spacing: 0.15rem;
+  width: 85%;
 }
 
 .main__paragraphs-container__last-paragraph-container__button__link__icon-container {
-  width: 20%;
+  width: 15%;
   text-align: center;
 }
 
 .main__paragraphs-container__last-paragraph-container__button__link__icon-container-img {
-  width: 32%;
+  width: 39%;
 }
 
 .main__media-container__map-container {
