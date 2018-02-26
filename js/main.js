@@ -4,18 +4,12 @@ var firstParagraphContainer = document.querySelector('.main__paragraphs-containe
 var firstParagraphLastChild = document.querySelector('.main__paragraphs-container__first-paragraph-container p:last-child');
 var delay;
 var delayDuration;
-var i = 1;
+var i;
 var html = document.querySelector('html');
 
 window.addEventListener("load", function(event) {
     logo.classList.add('main__paragraphs-container__logo-container--move');
-    firstParagraphContent.forEach(function(firstParagraphSentence) {
-      delay = 0.2;
-      delayDuration = delay * i;
-      firstParagraphSentence.style.animationDelay = delayDuration + 's';
-      firstParagraphSentence.classList.add('paragraph-content-move');
-      i++;
-    })
+    paragraphContentAnimation(1, firstParagraphContent, 0.2, 'paragraph-content-move');
 });
 
 logo.addEventListener('animationstart', function() {
@@ -35,23 +29,11 @@ var fixedParagraphContainer = document.querySelector('.main__paragraphs-containe
 firstParagraphLastChild.addEventListener('transitionend', function() {
   firstParagraphContainer.style.display = 'none';
   secondParagraphContainer.style.display = 'block';
-  i = 0;
-  secondParagraphContent.forEach(function(secondParagraphSentence) {
-    delay = 0.15;
-    delayDuration = delay * i;
-    secondParagraphSentence.style.animationDelay = delayDuration + 's';
-    secondParagraphSentence.classList.add('paragraph-content-move');
-    i++;
-  })
+  paragraphContentAnimation(0, secondParagraphContent, 0.15, 'paragraph-content-move');
   fixedParagraphContainer.classList.add('main__paragraphs-container__fixed-paragraph-container--visible');
 })
 
-secondParagraphLastChild.addEventListener('animationend', function() {
-  secondParagraphContent.forEach(function(secondParagraphSentence){
-    secondParagraphSentence.style.transitionDelay = '1.2s';
-    secondParagraphSentence.classList.add('element-hidden');
-  })
-})
+hidden(secondParagraphLastChild, secondParagraphContent, '1.2s');
 
 secondParagraphLastChild.addEventListener('transitionend', function() {
   secondParagraphContainer.style.display = 'none';
@@ -64,24 +46,15 @@ var thirdParagraphLastChild = document.querySelector('.main__paragraphs-containe
 secondParagraphLastChild.addEventListener('transitionend', function() {
   secondParagraphContainer.style.display = 'none';
   thirdParagraphContainer.style.display = 'block';
-  i = 0;
-  thirdParagraphContent.forEach(function(thirdParagraphSentence) {
-    delay = 0.15;
-    delayDuration = delay * i;
-    thirdParagraphSentence.style.animationDelay = delayDuration + 's';
-    thirdParagraphSentence.classList.add('paragraph-content-move');
-    i++;
-  })
+  paragraphContentAnimation(0, thirdParagraphContent, 0.15, 'paragraph-content-move');
 })
 
+hidden(thirdParagraphLastChild, thirdParagraphContent, '1.3s');
+
 thirdParagraphLastChild.addEventListener('animationend', function() {
-  thirdParagraphContent.forEach(function(thirdParagraphSentence){
-    thirdParagraphSentence.style.transitionDelay = '1.3s';
-    thirdParagraphSentence.classList.add('element-hidden');
     fixedParagraphContainer.classList.remove('main__paragraphs-container__fixed-paragraph-container--visible');
     fixedParagraphContainer.style.transitionDelay = '1.25s';
-  })
-})
+});
 
 var lastParagraphContent = document.querySelectorAll('.main__paragraphs-container__last-paragraph-container__content');
 var lastParagraphContainer = document.querySelector('.main__paragraphs-container__last-paragraph-container');
@@ -93,14 +66,7 @@ thirdParagraphLastChild.addEventListener('transitionend', function() {
   thirdParagraphContainer.style.display = 'none';
   lastParagraphContainer.style.display = 'block';
   lastParagraphButton.style.display = 'block';
-  i = 0;
-  lastParagraphContent.forEach(function(lastParagraphSentence){
-    delay = 0.2;
-    delayDuration = delay * i;
-    lastParagraphSentence.style.animationDelay = delayDuration + 's';
-    lastParagraphSentence.classList.add('main__paragraphs-container__last-paragraph-container__content--opacity');
-    i++;
-  })
+  paragraphContentAnimation(0, lastParagraphContent, 0.2, 'main__paragraphs-container__last-paragraph-container__content--opacity');
 })
 
 lastParagraphLastChild.addEventListener('animationstart', function() {
@@ -110,6 +76,25 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
   map.classList.add('main__media-container__map-container--move');
 });
 
+function paragraphContentAnimation(iValue, paragraphMoved, delayValue, classToAdd) {
+  i = iValue;
+  paragraphMoved.forEach(function(paragraphSentence) {
+    delay = delayValue;
+    delayDuration = delay * i;
+    paragraphSentence.style.animationDelay = delayDuration + 's';
+    paragraphSentence.classList.add(classToAdd);
+    i++;
+  })
+}
+
+function hidden(paragraphLastChild, paragraphContent, delayValue) {
+  paragraphLastChild.addEventListener('animationend', function() {
+    paragraphContent.forEach(function(ParagraphSentence){
+      ParagraphSentence.style.transitionDelay = delayValue;
+      ParagraphSentence.classList.add('element-hidden');
+    })
+  })
+}
 
 function myMap() {
     var mapProperties = {
