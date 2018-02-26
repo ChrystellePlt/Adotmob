@@ -1,19 +1,22 @@
+/*Asynchrone operations are needed for this exercise. SetTimeout is not a good option due to "stacking effect".
+We use animationEvents and transitionEvents to avoid this problem.*/
+
+var delay;
+var delayDuration;
+var i;
+
+// The code below allows logo and first paragraph animations
+
 var logo = document.querySelector('.main__paragraphs-container__logo-container');
 var firstParagraphContent = document.querySelectorAll('.main__paragraphs-container__first-paragraph-container__content');
 var firstParagraphContainer = document.querySelector('.main__paragraphs-container__first-paragraph-container');
 var firstParagraphLastChild = document.querySelector('.main__paragraphs-container__first-paragraph-container p:last-child');
-var delay;
-var delayDuration;
-var i;
-var html = document.querySelector('html');
+
 
 window.addEventListener("load", function(event) { //trigger function when all resources have finished loading
     logo.classList.add('main__paragraphs-container__logo-container--move');
     paragraphContentAnimation(1, firstParagraphContent, 0.2, 'paragraph-content-move');
 });
-
-/*Asynchrone operations are needed for this exercise. SetTimeout is not a good option due to "stacking effect".
-We will use animationEvent and transitionEvents to avoid this problem.*/
 
 logo.addEventListener('animationstart', function() { //trigger function when animation starts
   firstParagraphContent.forEach(function(firstParagraphSentence){
@@ -23,6 +26,8 @@ logo.addEventListener('animationstart', function() { //trigger function when ani
     })
   })
 })
+
+// The code below allows fixed and second paragraphs animations
 
 var secondParagraphContent = document.querySelectorAll('.main__paragraphs-container__second-paragraph-container__content');
 var secondParagraphContainer = document.querySelector('.main__paragraphs-container__second-paragraph-container');
@@ -42,6 +47,8 @@ secondParagraphLastChild.addEventListener('transitionend', function() {
   secondParagraphContainer.style.display = 'none';
 })
 
+// The code below allows third and fixed paragraphs animations
+
 var thirdParagraphContent = document.querySelectorAll('.main__paragraphs-container__third-paragraph-container__content');
 var thirdParagraphContainer = document.querySelector('.main__paragraphs-container__third-paragraph-container');
 var thirdParagraphLastChild = document.querySelector('.main__paragraphs-container__third-paragraph-container p:last-child');
@@ -58,6 +65,8 @@ thirdParagraphLastChild.addEventListener('animationend', function() {
     fixedParagraphContainer.classList.remove('main__paragraphs-container__fixed-paragraph-container--visible');
     fixedParagraphContainer.style.transitionDelay = '1.25s';
 });
+
+// The code below allows last paragraph and map animations
 
 var lastParagraphContent = document.querySelectorAll('.main__paragraphs-container__last-paragraph-container__content');
 var lastParagraphContainer = document.querySelector('.main__paragraphs-container__last-paragraph-container');
@@ -79,11 +88,11 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
   map.classList.add('main__media-container__map-container--move');
 });
 
-
+// functions definitions
 
 function paragraphContentAnimation(iValue, paragraphMoved, delayValue, classToAdd) {
   i = iValue;
-  paragraphMoved.forEach(function(paragraphSentence) { //loop to change animation-delay property value, to move elements one by one in cascade
+  paragraphMoved.forEach(function(paragraphSentence) { //loop to move elements one by one in cascade by changing animation-delay property value
     delay = delayValue;
     delayDuration = delay * i;
     paragraphSentence.style.animationDelay = delayDuration + 's';
@@ -101,7 +110,7 @@ function hidden(paragraphLastChild, paragraphContent, delayValue) {
   })
 }
 
-function initMap() {
+function initMap() { //insert google map API
   var mapLatLng = {lat: 48.7162227, lng: 2.244765};
 
   var map = new google.maps.Map(document.querySelector(".main__media-container__map-container"), {

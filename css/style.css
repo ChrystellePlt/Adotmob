@@ -7,6 +7,8 @@ BEM is great to use in Sass with `&` for class concatenation*/
   src: url("font/HelveticaNeueLTStdCn.woff");
 }
 
+
+/*reset inherited values*/
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -17,6 +19,7 @@ BEM is great to use in Sass with `&` for class concatenation*/
   text-decoration: none;
 }
 
+/*font-size set at 62.5%, so 1rem = 10px. Easier to use.*/
 html {
   font-size: 62.5%;
 }
@@ -107,19 +110,6 @@ html {
 .main__paragraphs-container__second-paragraph-container__content__last-child-style {
   padding-top: 7%;
   font-size: 6.3rem;
-}
-
-/*-------------------- VIDEO --------------------*/
-
-.main__media-container {
-  height: 42vh;
-}
-
-.main__media-container__video {
-  max-height: 100%;
-  width: 100%;
-  display: block;
-  margin: auto;
 }
 
 /*-------------------- 3RD PARAGRAPH --------------------*/
