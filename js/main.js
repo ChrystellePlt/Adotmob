@@ -7,15 +7,18 @@ var delayDuration;
 var i;
 var html = document.querySelector('html');
 
-window.addEventListener("load", function(event) {
+window.addEventListener("load", function(event) { //trigger function when all resources have finished loading
     logo.classList.add('main__paragraphs-container__logo-container--move');
     paragraphContentAnimation(1, firstParagraphContent, 0.2, 'paragraph-content-move');
 });
 
-logo.addEventListener('animationstart', function() {
+/*Asynchrone operations are needed for this exercise. SetTimeout is not a good option due to "stacking effect".
+We will use animationEvent and transitionEvents to avoid this problem.*/
+
+logo.addEventListener('animationstart', function() { //trigger function when animation starts
   firstParagraphContent.forEach(function(firstParagraphSentence){
     firstParagraphSentence.classList.add('element-hidden');
-    firstParagraphSentence.addEventListener('transitionend', function() {
+    firstParagraphSentence.addEventListener('transitionend', function() { //trigger function when transition terminates
       firstParagraphContainer.style.display = 'none';
     })
   })
@@ -76,9 +79,11 @@ lastParagraphLastChild.addEventListener('animationstart', function() {
   map.classList.add('main__media-container__map-container--move');
 });
 
+
+
 function paragraphContentAnimation(iValue, paragraphMoved, delayValue, classToAdd) {
   i = iValue;
-  paragraphMoved.forEach(function(paragraphSentence) {
+  paragraphMoved.forEach(function(paragraphSentence) { //loop to change animation-delay property value, to move elements one by one in cascade
     delay = delayValue;
     delayDuration = delay * i;
     paragraphSentence.style.animationDelay = delayDuration + 's';
@@ -88,7 +93,7 @@ function paragraphContentAnimation(iValue, paragraphMoved, delayValue, classToAd
 }
 
 function hidden(paragraphLastChild, paragraphContent, delayValue) {
-  paragraphLastChild.addEventListener('animationend', function() {
+  paragraphLastChild.addEventListener('animationend', function() { //trigger function when animation terminates
     paragraphContent.forEach(function(ParagraphSentence){
       ParagraphSentence.style.transitionDelay = delayValue;
       ParagraphSentence.classList.add('element-hidden');
@@ -96,11 +101,17 @@ function hidden(paragraphLastChild, paragraphContent, delayValue) {
   })
 }
 
-function myMap() {
-    var mapProperties = {
-        center: new google.maps.LatLng(48.7162227, 2.244765),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-var map = new google.maps.Map(document.querySelector(".main__media-container__map-container"), mapProperties);
+function initMap() {
+  var mapLatLng = {lat: 48.7162227, lng: 2.244765};
+
+  var map = new google.maps.Map(document.querySelector(".main__media-container__map-container"), {
+  center: mapLatLng,
+  zoom: 15,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  var marker = new google.maps.Marker({
+      position: mapLatLng,
+      title:"Krys"
+  });
 }

@@ -1,3 +1,7 @@
+/*All the class names use BEM convention. It helps to make code clear and legible to others.
+As it is clearer, it is faster to work.
+BEM is great to use in Sass with `&` for class concatenation*/
+
 @font-face {
   font-family: "helvetica-neue";
   src: url("font/HelveticaNeueLTStdCn.woff");
@@ -15,8 +19,6 @@
 
 html {
   font-size: 62.5%;
-
-
 }
 
 .main {
@@ -31,38 +33,33 @@ html {
   height: 58vh;
 }
 
+/*-------------------- LOGO --------------------*/
+
 .main__paragraphs-container__logo-container {
   top: 8%;
   left: 40%;
   width: 100%;
 }
 
-@-webkit-keyframes logo-move {
-from {top: 8%;}
-to {top: 0.5%;}
-from {left: 40%;}
-to {left: -5%}
-from {transform: scale(1.0)}
-to {transform: scale(0.8)}
+.main__paragraphs-container__logo-container__img {
+  width: 20%;
+  text-align: center;
 }
 
-@keyframes logo-move {
-  from {top: 8%;}
-  to {top: 0.5%;}
-  from {left: 40%;}
-  to {left: -5%}
-  from {transform: scale(1.0)}
-  to {transform: scale(0.8)}
-  }
+/*-------------------- VIDEO --------------------*/
 
-.main__paragraphs-container__logo-container--move {
-  -webkit-animation: logo-move 0.4s 1;
-  -moz-animation: logo-move 0.4s 1;
-  animation: logo-move 0.4s 1;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-  animation-timing-function: linear;
+.main__media-container {
+  height: 42vh;
 }
+
+.main__media-container__video {
+  max-height: 100%;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/*-------------------- 1ST PARAGRAPH --------------------*/
 
 .main__paragraphs-container__first-paragraph-container {
   color: #fff;
@@ -71,7 +68,6 @@ to {transform: scale(0.8)}
   letter-spacing: 0.3rem;
   font-family: 'helvetica-neue';
   font-weight: bold;
-
 }
 
 .main__paragraphs-container__first-paragraph-container__content {
@@ -81,33 +77,7 @@ to {transform: scale(0.8)}
   right: -120%;
 }
 
-.paragraph-content-move {
-  -webkit-animation: paragraph-content-move 0.55s forwards;
-  -moz-animation: paragraph-content-move 0.55s forwards;
-  animation: paragraph-content-move 0.55s forwards;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes paragraph-content-move {
-from {right: -120%;}
-to {right: -2%;}
-}
-
-@keyframes paragraph-content-move {
-from {right: -120%;}
-to {right: -2%;}
-}
-
-.element-hidden {
-  opacity: 0;
-  transition: opacity 0.65s ease-in-out;
-  -moz-transition: opacity 0.65s ease-in-out;
-  -webkit-transition: opacity 0.65s ease-in-out;
-}
-
-.display-none {
-  display: 'none';
-}
+/*-------------------- 2ND PARAGRAPH --------------------*/
 
 .main__paragraphs-container__second-paragraph-container {
   display: none;
@@ -139,10 +109,7 @@ to {right: -2%;}
   font-size: 6.3rem;
 }
 
-.main__paragraphs-container__logo-container__img {
-  width: 20%;
-  text-align: center;
-}
+/*-------------------- VIDEO --------------------*/
 
 .main__media-container {
   height: 42vh;
@@ -155,28 +122,7 @@ to {right: -2%;}
   margin: auto;
 }
 
-.main__paragraphs-container__fixed-paragraph-container {
-  position: absolute;
-  top: 85%;
-  padding: 0 4%;
-  margin: auto;
-  font-size: 0.9rem;
-  letter-spacing: 0.1rem;
-  line-height: 1.2rem;
-  color: #fff;
-  opacity: 0;
-  transition-delay: 1.5s;
-  transition: opacity 1s ease-in-out;
-  font-family: 'helvetica-neue';
-}
-
-.main__paragraphs-container__fixed-paragraph-container__content__link {
-  text-decoration: underline;
-}
-
-.main__paragraphs-container__fixed-paragraph-container--visible {
-  opacity: 1;
-}
+/*-------------------- 3RD PARAGRAPH --------------------*/
 
 .main__paragraphs-container__third-paragraph-container {
   display: none;
@@ -226,6 +172,8 @@ to {right: -2%;}
   vertical-align: top;
 }
 
+/*-------------------- LAST PARAGRAPH --------------------*/
+
 .main__paragraphs-container__last-paragraph-container {
   display: none;
   color: #fff;
@@ -240,23 +188,6 @@ to {right: -2%;}
   font-family: 'helvetica-neue';
   font-weight: bold;
   opacity: 0;
-}
-
-.main__paragraphs-container__last-paragraph-container__content--opacity {
-  -webkit-animation: last-paragraph-opacity 0.6s forwards;
-  -moz-animation: last-paragraph-opacity 0.6s forwards;
-  animation: last-paragraph-opacity 0.6s forwards;
-  animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes last-paragraph-opacity {
-from {opacity: 0;}
-to {opacity: 1;}
-}
-
-@keyframes last-paragraph-opacity {
-from {opacity: 0;}
-to {opacity: 1;}
 }
 
 .main__paragraphs-container__last-paragraph-container__button {
@@ -294,6 +225,33 @@ to {opacity: 1;}
   width: 39%;
 }
 
+/*-------------------- FIXED PARAGRAPH --------------------*/
+
+.main__paragraphs-container__fixed-paragraph-container {
+  position: absolute;
+  top: 85%;
+  padding: 0 4%;
+  margin: auto;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.2rem;
+  color: #fff;
+  opacity: 0;
+  transition-delay: 1.5s;
+  transition: opacity 1s ease-in-out;
+  font-family: 'helvetica-neue';
+}
+
+.main__paragraphs-container__fixed-paragraph-container__content__link {
+  text-decoration: underline;
+}
+
+.main__paragraphs-container__fixed-paragraph-container--visible {
+  opacity: 1;
+}
+
+/*-------------------- MAP --------------------*/
+
 .main__media-container__map-container {
   height: 42vh;
   position: absolute;
@@ -302,6 +260,105 @@ to {opacity: 1;}
   text-align: center;
 }
 
+/*-------------------- INFO ICON --------------------*/
+
+.main__info-container {
+  position: absolute;
+  z-index: 2;
+  bottom: 1%;
+  right: 1%;
+  width: 4%;
+}
+
+.main__info-container__link__img {
+  width: 100%;
+}
+
+/*-------------------- ANIMATIONS --------------------*/
+/* Better to work with CSS animations than CSS transitions, animationEvents are supported by more browsers than transitionEvents.*/
+
+/*----------- logo move -----------*/
+@-webkit-keyframes logo-move {
+from {top: 8%;}
+to {top: 0.5%;}
+from {left: 40%;}
+to {left: -5%}
+from {transform: scale(1.0)}
+to {transform: scale(0.8)}
+}
+
+@-moz-keyframes logo-move {
+from {top: 8%;}
+to {top: 0.5%;}
+from {left: 40%;}
+to {left: -5%}
+from {transform: scale(1.0)}
+to {transform: scale(0.8)}
+}
+
+@keyframes logo-move {
+from {top: 8%;}
+to {top: 0.5%;}
+from {left: 40%;}
+to {left: -5%}
+from {transform: scale(1.0)}
+to {transform: scale(0.8)}
+}
+
+.main__paragraphs-container__logo-container--move {
+  -webkit-animation: logo-move 0.4s forwards linear;
+  -moz-animation: logo-move 0.4s forwards linear;
+  animation: logo-move 0.4s forwards linear;
+  animation-delay: 2s;
+}
+
+/*----------- paragraphs move -----------*/
+.paragraph-content-move {
+  -webkit-animation: paragraph-content-move 0.55s forwards;
+  -moz-animation: paragraph-content-move 0.55s forwards;
+  animation: paragraph-content-move 0.55s forwards;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes paragraph-content-move {
+from {right: -120%;}
+to {right: -2%;}
+}
+
+@-moz-keyframes paragraph-content-move {
+from {right: -120%;}
+to {right: -2%;}
+}
+
+@keyframes paragraph-content-move {
+from {right: -120%;}
+to {right: -2%;}
+}
+
+/*----------- paragraphs opacity -----------*/
+.main__paragraphs-container__last-paragraph-container__content--opacity {
+  -webkit-animation: last-paragraph-opacity 0.6s forwards;
+  -moz-animation: last-paragraph-opacity 0.6s forwards;
+  animation: last-paragraph-opacity 0.6s forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes last-paragraph-opacity {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-moz-keyframes last-paragraph-opacity {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@keyframes last-paragraph-opacity {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+/*----------- map move -----------*/
 .main__media-container__map-container--move {
   -webkit-animation: map-move 0.7s forwards;
   -moz-animation: map-move 0.7s forwards;
@@ -314,19 +371,23 @@ from {bottom: -47vh;}
 to {bottom: 0;}
 }
 
+@-moz-keyframes map-move {
+from {bottom: -47vh;}
+to {bottom: 0;}
+}
+
 @keyframes map-move {
 from {bottom: -47vh;}
 to {bottom: 0;}
 }
 
-.main__info-container {
-  position: absolute;
-  z-index: 2;
-  bottom: 1%;
-  right: 1%;
-  width: 4%;
+.element-hidden {
+  opacity: 0;
+  transition: opacity 0.65s ease-in-out;
+  -moz-transition: opacity 0.65s ease-in-out;
+  -webkit-transition: opacity 0.65s ease-in-out;
 }
 
-.main__info-container__link__img {
-  width: 100%;
+.display-none {
+  display: 'none';
 }
