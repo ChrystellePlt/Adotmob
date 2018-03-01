@@ -1,16 +1,14 @@
 /*Asynchrone operations are needed for this exercise. SetTimeout is not a good option due to "stacking effect".
 We use animationEvents and transitionEvents to avoid this problem.*/
 
-var delay;
-var delayDuration;
-var i;
-
 // The code below allows logo and first paragraph animations
 
-var logo = document.querySelector('.main__paragraphs-container__logo-container');
-var firstParagraphContent = document.querySelectorAll('.main__paragraphs-container__first-paragraph-container__content');
-var firstParagraphContainer = document.querySelector('.main__paragraphs-container__first-paragraph-container');
-var firstParagraphLastChild = document.querySelector('.main__paragraphs-container__first-paragraph-container p:last-child');
+const className = '.main__paragraphs-container__';
+
+var logo = document.querySelector(`${className}logo-container`);
+var firstParagraphContent = document.querySelectorAll(`${className}first-paragraph-container__content`);
+var firstParagraphContainer = document.querySelector(`${className}first-paragraph-container`);
+var firstParagraphLastChild = document.querySelector(`${className}first-paragraph-container p:last-child`);
 
 
 window.addEventListener("load", function(event) { //trigger function when all resources have finished loading
@@ -29,10 +27,10 @@ logo.addEventListener('animationstart', function() { //trigger function when ani
 
 // The code below allows fixed and second paragraphs animations
 
-var secondParagraphContent = document.querySelectorAll('.main__paragraphs-container__second-paragraph-container__content');
-var secondParagraphContainer = document.querySelector('.main__paragraphs-container__second-paragraph-container');
-var secondParagraphLastChild = document.querySelector('.main__paragraphs-container__second-paragraph-container p:last-child');
-var fixedParagraphContainer = document.querySelector('.main__paragraphs-container__fixed-paragraph-container');
+var secondParagraphContent = document.querySelectorAll(`${className}second-paragraph-container__content`);
+var secondParagraphContainer = document.querySelector(`${className}second-paragraph-container`);
+var secondParagraphLastChild = document.querySelector(`${className}second-paragraph-container p:last-child`);
+var fixedParagraphContainer = document.querySelector(`${className}fixed-paragraph-container`);
 
 firstParagraphLastChild.addEventListener('transitionend', function() {
   firstParagraphContainer.style.display = 'none';
@@ -49,9 +47,9 @@ secondParagraphLastChild.addEventListener('transitionend', function() {
 
 // The code below allows third and fixed paragraphs animations
 
-var thirdParagraphContent = document.querySelectorAll('.main__paragraphs-container__third-paragraph-container__content');
-var thirdParagraphContainer = document.querySelector('.main__paragraphs-container__third-paragraph-container');
-var thirdParagraphLastChild = document.querySelector('.main__paragraphs-container__third-paragraph-container p:last-child');
+var thirdParagraphContent = document.querySelectorAll(`${className}third-paragraph-container__content`);
+var thirdParagraphContainer = document.querySelector(`${className}third-paragraph-container`);
+var thirdParagraphLastChild = document.querySelector(`${className}third-paragraph-container p:last-child`);
 
 secondParagraphLastChild.addEventListener('transitionend', function() {
   secondParagraphContainer.style.display = 'none';
@@ -68,10 +66,10 @@ thirdParagraphLastChild.addEventListener('animationend', function() {
 
 // The code below allows last paragraph and map animations
 
-var lastParagraphContent = document.querySelectorAll('.main__paragraphs-container__last-paragraph-container__content');
-var lastParagraphContainer = document.querySelector('.main__paragraphs-container__last-paragraph-container');
-var lastParagraphLastChild = document.querySelector('.main__paragraphs-container__last-paragraph-container p:last-child');
-var lastParagraphButton = document.querySelector('.main__paragraphs-container__last-paragraph-container__button');
+var lastParagraphContent = document.querySelectorAll(`${className}last-paragraph-container__content`);
+var lastParagraphContainer = document.querySelector(`${className}last-paragraph-container`);
+var lastParagraphLastChild = document.querySelector(`${className}last-paragraph-container p:last-child`);
+var lastParagraphButton = document.querySelector(`${className}last-paragraph-container__button`);
 var map = document.querySelector('.main__media-container__map-container');
 
 thirdParagraphLastChild.addEventListener('transitionend', function() {
@@ -83,18 +81,16 @@ thirdParagraphLastChild.addEventListener('transitionend', function() {
 
 lastParagraphLastChild.addEventListener('animationstart', function() {
   lastParagraphButton.style.animationDelay = '0.3s';
-  lastParagraphButton.classList.add('main__paragraphs-container__last-paragraph-container__content--opacity');
+  lastParagraphButton.classList.add(`${className}last-paragraph-container__content--opacity`);
   map.style.animationDelay = '0.1s';
   map.classList.add('main__media-container__map-container--move');
 });
 
 // functions definitions
 
-function paragraphContentAnimation(iValue, paragraphMoved, delayValue, classToAdd) {
-  i = iValue;
+function paragraphContentAnimation(i, paragraphMoved, delayValue, classToAdd) {
   paragraphMoved.forEach(function(paragraphSentence) { //loop to move elements one by one in cascade by changing animation-delay property value
-    delay = delayValue;
-    delayDuration = delay * i;
+    var delayDuration = delayValue * i;
     paragraphSentence.style.animationDelay = delayDuration + 's';
     paragraphSentence.classList.add(classToAdd);
     i++;
